@@ -1,0 +1,1055 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plumber Jon's - Plumbing and Drain Cleaning</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1e3a8a;
+            --secondary: #ea580c;
+            --accent: #14b8a6;
+            --background: #f8fafc;
+            --text: #374151;
+            --light-text: #64748b;
+            --white: #ffffff;
+            --gray-light: #e2e8f0;
+            --gray-dark: #1f2937;
+            --chat-bg: #1e3a8a;
+            --chat-text: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background-color: var(--background);
+        }
+
+        h1, h2, h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        h2 {
+            font-size: 2rem;
+            text-align: center;
+            color: var(--primary);
+            position: relative;
+            margin-bottom: 2rem;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background-color: var(--secondary);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Styles */
+        header {
+            background: url('https://t1.chatglm.cn/file/6959398738448157fe6dbee7.png?expired_at=1767887115&sign=59697f05c6f4652d7412896a023cd545&ext=png') no-repeat center center;
+            background-size: cover;
+            padding: 1rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .logo {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--white);
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+            letter-spacing: 1px;
+        }
+
+        .logo span {
+            color: #ff6b35;
+            font-size: 3.5rem;
+        }
+
+        .tagline {
+            background: linear-gradient(90deg, #ff6b35, #f7931e);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-top: 0.5rem;
+            text-align: center;
+            width: 100%;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 2rem;
+        }
+
+        nav ul li a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #ff9e6b;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #1e3a8a, #2563eb);
+            color: var(--white);
+            padding: 3rem 0;
+            text-align: center;
+        }
+
+        .hero h2 {
+            color: var(--white);
+            margin-bottom: 1rem;
+            font-size: 2.2rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .cta-button {
+            background: var(--secondary);
+            color: var(--white);
+            padding: 12px 24px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 4px 6px -1px rgba(234, 88, 12, 0.3);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(234, 88, 12, 0.4);
+        }
+
+        /* Services Section */
+        .services {
+            padding: 4rem 0;
+        }
+
+        .services-intro {
+            text-align: center;
+            margin-bottom: 3rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .service-card {
+            background: var(--white);
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+
+        .service-card h3 {
+            color: var(--primary);
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .service-card p {
+            font-size: 0.95rem;
+            color: var(--light-text);
+        }
+
+        /* Philosophy Section */
+        .philosophy {
+            background: var(--white);
+            padding: 4rem 0;
+        }
+
+        .philosophy-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .philosophy-cards {
+            display: flex;
+            justify-content: space-between;
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .philosophy-card {
+            flex: 1;
+            background: var(--white);
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .philosophy-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .philosophy-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+        }
+
+        .philosophy-card h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        /* Testimonials Section */
+        .testimonials {
+            padding: 4rem 0;
+            background: var(--white);
+        }
+
+        .testimonial-slider {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .testimonial {
+            text-align: center;
+            padding: 2rem;
+            background: var(--background);
+            border-radius: 12px;
+            margin: 0 1rem;
+        }
+
+        .testimonial p {
+            font-style: italic;
+            margin-bottom: 1.5rem;
+            color: var(--light-text);
+        }
+
+        .testimonial-author {
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        .testimonial-role {
+            font-size: 0.9rem;
+            color: var(--light-text);
+        }
+
+        .slider-dots {
+            display: flex;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+
+        .dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: var(--gray-light);
+            margin: 0 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .dot.active {
+            background: var(--secondary);
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 4rem 0;
+            background: var(--white);
+        }
+
+        .contact-intro {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid var(--gray-light);
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px rgba(20, 184, 166, 0.1);
+        }
+
+        /* Footer */
+        footer {
+            background: #1a202c;
+            color: var(--white);
+            padding: 3rem 0 1rem;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .payment-methods {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .payment-methods img {
+            height: 30px;
+            opacity: 0.8;
+            transition: opacity 0.3s;
+        }
+
+        .payment-methods img:hover {
+            opacity: 1;
+        }
+
+        .copyright {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        /* AI Chat Widget */
+        .ai-chat-widget {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 60px;
+            height: 60px;
+            background: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s;
+            z-index: 1000;
+        }
+
+        .ai-chat-widget:hover {
+            transform: scale(1.1);
+            background: var(--secondary);
+        }
+
+        .ai-chat-widget i {
+            color: var(--white);
+            font-size: 24px;
+        }
+
+        /* Chat Window */
+        .chat-window {
+            position: fixed;
+            bottom: 90px;
+            right: 20px;
+            width: 350px;
+            height: 500px;
+            background: var(--chat-bg);
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            display: none;
+            flex-direction: column;
+            overflow: hidden;
+            z-index: 999;
+        }
+
+        .chat-header {
+            background: rgba(0, 0, 0, 0.2);
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .chat-header h3 {
+            color: var(--chat-text);
+            font-size: 1.2rem;
+            margin: 0;
+        }
+
+        .close-chat {
+            color: var(--chat-text);
+            background: none;
+            border: none;
+            font-size: 1.2rem;
+            cursor: pointer;
+        }
+
+        .chat-messages {
+            flex: 1;
+            padding: 15px;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .message {
+            max-width: 80%;
+            padding: 10px 15px;
+            border-radius: 18px;
+            font-size: 0.95rem;
+        }
+
+        .bot-message {
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--chat-text);
+            align-self: flex-start;
+            border-bottom-left-radius: 4px;
+        }
+
+        .user-message {
+            background: var(--secondary);
+            color: var(--white);
+            align-self: flex-end;
+            border-bottom-right-radius: 4px;
+        }
+
+        .chat-input {
+            padding: 15px;
+            display: flex;
+            gap: 10px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .chat-input input {
+            flex: 1;
+            padding: 10px;
+            border: none;
+            border-radius: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--chat-text);
+        }
+
+        .chat-input input::placeholder {
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .send-button {
+            background: var(--secondary);
+            border: none;
+            border-radius: 50%;
+            width: 36px;
+            height: 36px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .send-button:hover {
+            background: #d97706;
+        }
+
+        /* Quick Reply Buttons */
+        .quick-replies {
+            display: flex;
+            gap: 8px;
+            margin-top: 10px;
+            flex-wrap: wrap;
+        }
+
+        .quick-reply {
+            background: rgba(255, 255, 255, 0.1);
+            border: none;
+            color: var(--chat-text);
+            padding: 6px 12px;
+            border-radius: 15px;
+            font-size: 0.85rem;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .quick-reply:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .logo {
+                margin-bottom: 1rem;
+            }
+
+            nav ul {
+                margin-top: 1rem;
+                justify-content: center;
+            }
+
+            nav ul li {
+                margin: 0 1rem;
+            }
+
+            .philosophy-cards {
+                flex-direction: column;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                gap: 1.5rem;
+                text-align: center;
+            }
+
+            .chat-window {
+                width: 90%;
+                right: 5%;
+                bottom: 20px;
+                height: 80vh;
+            }
+        }
+
+        /* Typing indicator */
+        .typing {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            padding: 10px 15px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 18px;
+            color: var(--chat-text);
+        }
+
+        .typing-dot {
+            width: 8px;
+            height: 8px;
+            background: var(--chat-text);
+            border-radius: 50%;
+            animation: typing 1.4s infinite;
+        }
+
+        .typing-dot:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .typing-dot:nth-child(3) {
+            animation-delay: 0.4s;
+        }
+
+        @keyframes typing {
+            0%, 60%, 100% {
+                transform: translateY(0);
+            }
+            30% {
+                transform: translateY(-10px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-content">
+            <div class="logo-container">
+                <img src="https://t1.chatglm.cn/file/6959390bea7a889f5976d76d.png?expired_at=1767887115&sign=5def69bc09480133ce84a6dca1de19d8&ext=png" alt="Plumber Jon's Logo" class="logo-image">
+                <div class="tagline">Plumbing and Drain Cleaning</div>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#services">OUR SERVICES</a></li>
+                    <li><a href="#philosophy">ABOUT US</a></li>
+                    <li><a href="#testimonials">TESTIMONIALS</a></li>
+                    <li><a href="#contact">CONTACT</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h2>Call us today for a FREE No-Hassle Quote</h2>
+            <p>(559) 323-5667</p>
+            <button class="cta-button" onclick="scrollToContact()">Get Your Free Quote</button>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="container">
+            <h2>FRESNO/CLOVIS PLUMBING EXPERTS</h2>
+            <div class="services-intro">
+                <p>At Plumber Jon's Plumbing, we provide every customer with a full range of possible repair and installation options—allowing the customers to control the cost, scope, and results of their plumbing projects. We inform you through the process, to insure your trust and to express our care for your home.</p>
+                <p>Our services include but are not limited to:</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>Drain Cleaning</h3>
+                    <p>Look to Plumber Jon's for professional assistance before using harmful chemicals or breaking out the plunger.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Faucets, Fixtures and Sinks</h3>
+                    <p>Plumber Jon's offers high quality repair services and installations of faucets, toilets, bidets, sinks, shower fixtures and etc. at reasonable prices.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Gas Plumbing</h3>
+                    <p>Plumber Jon's Plumbing will inspect, repair or replace any problematic gas lines to get your home back to the comfort level you desire.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Garbage Disposals</h3>
+                    <p>We can save you time and money by having your garbage disposal repaired or replaced and working perfectly.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Water Leaks and Repairs</h3>
+                    <p>Plumber Jon's will inspect your home for water leaks and repair the leaks if necessary.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Repiping</h3>
+                    <p>Plumber Jon's offers repiping options whether it is hot water lines, cold water lines or the entire water system.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Clogged Toilets & Toilet Repairs</h3>
+                    <p>Plumber Jon's can troubleshoot and repair those pesky clogged or leaky toilets that might keep you up all night.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Water Heaters</h3>
+                    <p>Our trained technicians will diagnose issues and recommend a repair or, if needed, they will replace the faulty water heater.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Philosophy Section -->
+    <section class="philosophy" id="philosophy">
+        <div class="container">
+            <h2>PLUMBER JON'S PHILOSOPHY</h2>
+            <div class="philosophy-content">
+                <p>I started in the Plumbing field straight out of high school back in 1992. From those early days and now 25 years later I've stuck to what I was taught and what I know works, and that is to involve the customer in what's going on with their problems and give them different options to resolve them.</p>
+                <p>I believe in what we call a "non-sales based" philosophy. At no time during our visit will you ever feel like you're being pressured or sold on something you're not sure you need. Our approach is not to start the day with a quota to be reached or sales goals, instead we start the day with a goal of helping our customers when they need us the most.</p>
+                <p>This fair and honest approach is how I have kept my customers and their entire families seeking my services for 25+ years. We would be happy to help you and to build another long relationship.</p>
+            </div>
+            <div class="philosophy-cards">
+                <div class="philosophy-card">
+                    <img src="https://t1.chatglm.cn/file/69592e90f065a3478a2f62bf.png?expired_at=1767884307&sign=99a60a2f8061054bd6992e5c18521b74&ext=png" alt="Locally Owned & Operated">
+                    <h3>Locally Owned & Operated</h3>
+                    <p>We know the homes in this area and we use this knowledge to deliver quality service to our customers.</p>
+                </div>
+                <div class="philosophy-card">
+                    <img src="https://t1.chatglm.cn/file/69592e90f065a3478a2f62bf.png?expired_at=1767884307&sign=99a60a2f8061054bd6992e5c18521b74&ext=png" alt="You Get Options">
+                    <h3>You Get Options</h3>
+                    <p>While most plumbers give one option, we give multiple to find what is most suitable for your needs.</p>
+                </div>
+                <div class="philosophy-card">
+                    <img src="https://t1.chatglm.cn/file/69592e90f065a3478a2f62bf.png?expired_at=1767884307&sign=99a60a2f8061054bd6992e5c18521b74&ext=png" alt="On-Call 24/7">
+                    <h3>On-Call 24/7</h3>
+                    <p>Plumbing emergencies rarely happen during normal business hours. That's why Plumber Jon's offers emergency services to all our customers.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="hero">
+        <div class="container">
+            <h2>Call us today for a FREE No-Hassle Quote</h2>
+            <p>(559) 323-5667</p>
+            <button class="cta-button" onclick="scrollToContact()">Get Your Free Quote</button>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials" id="testimonials">
+        <div class="container">
+            <h2>TESTIMONIALS</h2>
+            <div class="testimonial-slider">
+                <div class="testimonial">
+                    <p>"Hands-down, Jon at Plumber Jon's Plumbing And Drain Cleaning is the best. He is a true professional. Not only is his work excellent, he is trustworthy and caring. He listens to his customers and treats them with respect."</p>
+                    <div class="testimonial-author">Norma Depoyan</div>
+                    <div class="testimonial-role">Plumber Jon's Customer</div>
+                </div>
+                <div class="slider-dots">
+                    <span class="dot active"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2>CONTACT US</h2>
+            <div class="contact-intro">
+                <p>Is your home in need of professional plumbing services? Contact us and schedule an appointment with Plumber Jon today!</p>
+            </div>
+            <div class="contact-form">
+                <div class="form-group">
+                    <label for="name">Your Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Your Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="subject">Subject</label>
+                    <input type="text" id="subject" name="subject" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                </div>
+                <button class="cta-button" type="submit" onclick="submitForm()">Send Message</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="payment-methods">
+                    <img src="https://placehold.co/60x30/ffffff/000000?text=Visa" alt="Visa payment method">
+                    <img src="https://placehold.co/60x30/ffffff/000000?text=MC" alt="MasterCard payment method">
+                    <img src="https://placehold.co/60x30/ffffff/000000?text=Disc" alt="Discover payment method">
+                    <img src="https://placehold.co/60x30/ffffff/000000?text=AMEX" alt="American Express payment method">
+                </div>
+                <div class="copyright">
+                    © Copyright Plumber Jon's. All Rights Reserved
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- AI Chat Widget -->
+    <div class="ai-chat-widget" onclick="toggleChat()">
+        <i class="fas fa-robot"></i>
+    </div>
+
+    <!-- Chat Window -->
+    <div class="chat-window" id="chatWindow">
+        <div class="chat-header">
+            <h3>Plumber Jon's Assistant</h3>
+            <button class="close-chat" onclick="toggleChat()">&times;</button>
+        </div>
+        <div class="chat-messages" id="chatMessages">
+            <div class="message bot-message">
+                Hi! I'm your Plumber Jon's Assistant. How can I help you today? Feel free to ask about our services, pricing, or schedule a quote!
+                <div class="quick-replies">
+                    <button class="quick-reply" onclick="sendQuickReply('services')">Services</button>
+                    <button class="quick-reply" onclick="sendQuickReply('pricing')">Pricing</button>
+                    <button class="quick-reply" onclick="sendQuickReply('quote')">Free Quote</button>
+                    <button class="quick-reply" onclick="sendQuickReply('emergency')">Emergency</button>
+                </div>
+            </div>
+        </div>
+        <div class="chat-input">
+            <input type="text" id="chatInput" placeholder="Type your message..." onkeypress="handleKeyPress(event)">
+            <button class="send-button" onclick="sendMessage()">
+                <i class="fas fa-paper-plane"></i>
+            </button>
+        </div>
+    </div>
+
+    <script>
+        // Chat functionality
+        const chatWindow = document.getElementById('chatWindow');
+        const chatMessages = document.getElementById('chatMessages');
+        const chatInput = document.getElementById('chatInput');
+        let isTyping = false;
+
+        function toggleChat() {
+            if (chatWindow.style.display === 'flex') {
+                chatWindow.style.display = 'none';
+            } else {
+                chatWindow.style.display = 'flex';
+                chatInput.focus();
+            }
+        }
+
+        function sendMessage() {
+            const message = chatInput.value.trim();
+            if (message && !isTyping) {
+                addMessage(message, 'user');
+                chatInput.value = '';
+                isTyping = true;
+                showTypingIndicator();
+                
+                // Simulate bot thinking
+                setTimeout(() => {
+                    removeTypingIndicator();
+                    const response = generateBotResponse(message);
+                    addMessage(response, 'bot');
+                    isTyping = false;
+                }, 1500);
+            }
+        }
+
+        function handleKeyPress(event) {
+            if (event.key === 'Enter') {
+                sendMessage();
+            }
+        }
+
+        function addMessage(text, sender) {
+            const messageDiv = document.createElement('div');
+            messageDiv.classList.add('message', `${sender}-message`);
+            messageDiv.textContent = text;
+            chatMessages.appendChild(messageDiv);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+
+        function showTypingIndicator() {
+            const typingDiv = document.createElement('div');
+            typingDiv.classList.add('typing');
+            typingDiv.innerHTML = '<div class="typing-dot"></div><div class="typing-dot"></div><div class="typing-dot"></div>';
+            chatMessages.appendChild(typingDiv);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+
+        function removeTypingIndicator() {
+            const typingIndicator = chatMessages.querySelector('.typing');
+            if (typingIndicator) {
+                typingIndicator.remove();
+            }
+        }
+
+        function sendQuickReply(reply) {
+            addMessage(reply, 'user');
+            isTyping = true;
+            showTypingIndicator();
+            
+            setTimeout(() => {
+                removeTypingIndicator();
+                const response = generateBotResponse(reply);
+                addMessage(response, 'bot');
+                isTyping = false;
+            }, 1000);
+        }
+
+        // Enhanced bot response logic
+        function generateBotResponse(userMessage) {
+            const message = userMessage.toLowerCase();
+            let response = '';
+            
+            // Service-related queries
+            if (message.includes('service') || message.includes('what do you do') || message.includes('services')) {
+                response = "We offer a comprehensive range of plumbing services including drain cleaning, faucet and fixture repairs, gas plumbing, garbage disposal services, water leak repairs, repiping, clogged toilet repairs, and water heater services. Is there a specific service you're interested in?";
+            }
+            // Pricing and cost queries
+            else if (message.includes('price') || message.includes('cost') || message.includes('how much') || message.includes('pricing')) {
+                response = "We provide free, no-hassle quotes for all our services. The cost depends on the specific issue and the scope of work required. Would you like to schedule a free quote? Our team can assess your needs and provide an accurate estimate.";
+            }
+            // Quote requests
+            else if (message.includes('quote') || message.includes('free quote') || message.includes('estimate')) {
+                response = "Absolutely! We'd be happy to provide you with a free, no-obligation quote. You can call us directly at (559) 323-5667 or fill out our contact form on the website. What's the best way to reach you?";
+            }
+            // Emergency services
+            else if (message.includes('emergency') || message.includes('urgent') || message.includes('now') || message.includes('emergency service')) {
+                response = "Yes, we offer 24/7 emergency plumbing services! Our team is available around the clock for plumbing emergencies. Please call our emergency hotline at (559) 323-5667 immediately, and we'll dispatch a technician to your location as soon as possible.";
+            }
+            // Location and service area
+            else if (message.includes('location') || message.includes('area') || message.includes('where') || message.includes('fresno') || message.includes('clovis')) {
+                response = "We proudly serve the Fresno and Clovis areas, including surrounding communities. Our locally owned and operated business has been serving this area for over 25 years, so we know the local plumbing needs well.";
+            }
+            // Business hours
+            else if (message.includes('hours') || message.includes('open') || message.includes('when')) {
+                response = "We're available 24/7 for emergency services. For regular appointments, we typically operate during standard business hours, but we can often accommodate flexible scheduling to meet your needs.";
+            }
+            // Contact information
+            else if (message.includes('contact') || message.includes('phone') || message.includes('call') || message.includes('number')) {
+                response = "You can reach us at (559) 323-5667. Our team is ready to help you with any plumbing needs. We also have an online contact form on our website if you prefer to send us a message.";
+            }
+            // About the business
+            else if (message.includes('about') || message.includes('who') || message.includes('experience') || message.includes('history')) {
+                response = "Plumber Jon's has been serving the Fresno/Clovis area since 1992, with over 25 years of experience in professional plumbing services. We pride ourselves on our non-sales approach, providing honest advice and multiple options to our customers.";
+            }
+            // Warranty and guarantees
+            else if (message.includes('warranty') || message.includes('guarantee') || message.includes('assurance')) {
+                response = "We stand behind our work with quality guarantees. Specific warranty details depend on the service provided and the materials used. When you work with us, you can expect professional, reliable service with transparent pricing and excellent customer care.";
+            }
+            // Payment methods
+            else if (message.includes('payment') || message.includes('credit') || message.includes('card') || message.includes('pay')) {
+                response = "We accept all major credit cards including Visa, MasterCard, Discover, and American Express. We also offer flexible payment options to make our services accessible to all our customers.";
+            }
+            // General greetings and small talk
+            else if (message.includes('hello') || message.includes('hi') || message.includes('hey') || message.includes('how are you')) {
+                response = "Hello! Thanks for reaching out. I'm here to help you with any plumbing questions or concerns you might have. How can I assist you today?";
+            }
+            // Thank you messages
+            else if (message.includes('thank') || message.includes('thanks')) {
+                response = "You're very welcome! I'm glad I could help. Is there anything else you'd like to know about our plumbing services?";
+            }
+            // Goodbye messages
+            else if (message.includes('bye') || message.includes('goodbye') || message.includes('see you')) {
+                response = "Thank you for chatting with Plumber Jon's Assistant! Have a great day, and feel free to reach out if you need any plumbing help in the future. Take care!";
+            }
+            // Help with specific issues
+            else if (message.includes('leak') || message.includes('drip') || message.includes('water') || message.includes('pipe')) {
+                response = "Water leaks can cause significant damage if not addressed promptly. Our technicians are trained to quickly identify and repair all types of water leaks, from small drips to major pipe breaks. We use professional equipment to ensure the job is done right the first time.";
+            }
+            else if (message.includes('drain') || message.includes('clogged') || message.includes('blocked')) {
+                response = "Clogged drains are a common plumbing issue we handle regularly. We use professional drain cleaning equipment to safely and effectively clear blockages without damaging your pipes. We can also provide maintenance tips to help prevent future clogs.";
+            }
+            else if (message.includes('toilet') || message.includes('flush') || message.includes('running')) {
+                response = "Toilet issues can be tricky, but our experienced plumbers can diagnose and repair any toilet problem, from running toilets to clogs or leaks. We offer both repair and replacement options depending on the condition of your fixture.";
+            }
+            else if (message.includes('water heater') || message.includes('heater') || message.includes('hot water')) {
+                response = "We provide comprehensive water heater services including repair, maintenance, and replacement. Whether you need a quick fix or a complete system replacement, our technicians can help you choose the best solution for your home's hot water needs.";
+            }
+            // General plumbing advice
+            else if (message.includes('advice') || message.includes('tip') || message.includes('recommend') || message.includes('suggest')) {
+                response = "Certainly! Here are some quick plumbing tips: 1) Regularly check for leaks under sinks and around toilets, 2) Avoid pouring grease down drains, 3) Consider a drain screen to catch hair and debris, 4) Know where your main water shut-off valve is located. For specific advice, it's always best to consult with a professional.";
+            }
+            // Booking and scheduling
+            else if (message.includes('appointment') || message.includes('schedule') || message.includes('book')) {
+                response = "I'd be happy to help you schedule an appointment! You can call us directly at (559) 323-5667 to book a time that works for you, or use our online contact form to request a specific time. We offer flexible scheduling to accommodate your needs.";
+            }
+            // New customer inquiries
+            else if (message.includes('new') || message.includes('first') || message.includes('never') || message.includes('before')) {
+                response = "Welcome! We're excited to help you with your plumbing needs. As a new customer, you'll receive the same high-quality service and fair pricing that our long-term customers appreciate. We believe in building lasting relationships with all our customers.";
+            }
+            // Technical questions
+            else if (message.includes('license') || message.includes('certified') || message.includes('insurance') || message.includes('qualified')) {
+                response = "Yes, all our plumbers are fully licensed, certified, and insured. We maintain proper insurance coverage and stay up-to-date with the latest plumbing codes and regulations to ensure safe, compliant work for your home.";
+            }
+            // Response to unclear messages
+            else {
+                response = "I'm here to help with all your plumbing needs! Could you please clarify what you're looking for? You can ask about our services, pricing, scheduling, or specific plumbing issues you're experiencing.";
+            }
+            
+            return response;
+        }
+
+        // Form submission
+        function submitForm() {
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const subject = document.getElementById('subject').value;
+            const message = document.getElementById('message').value;
+            
+            if (name && email && subject && message) {
+                // In a real application, this would send the form data to a server
+                alert('Thank you for your message! We will contact you soon.');
+                document.querySelector('.contact-form').reset();
+            } else {
+                alert('Please fill in all fields before submitting.');
+            }
+        }
+
+        // Scroll to contact section
+        function scrollToContact() {
+            document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Initialize chat with welcome message after a short delay
+        setTimeout(() => {
+            const welcomeMessage = "Welcome to Plumber Jon's! How can I assist you with your plumbing needs today?";
+            addMessage(welcomeMessage, 'bot');
+        }, 2000);
+
+        // Testimonial slider functionality
+        const dots = document.querySelectorAll('.dot');
+        let currentSlide = 0;
+
+        function showSlide(index) {
+            dots.forEach(dot => dot.classList.remove('active'));
+            dots[index].classList.add('active');
+        }
+
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                currentSlide = index;
+                showSlide(index);
+            });
+        });
+
+        // Auto-rotate testimonials
+        setInterval(() => {
+            currentSlide = (currentSlide + 1) % dots.length;
+            showSlide(currentSlide);
+        }, 5000);
+    </script>
+</body>
+</html>
